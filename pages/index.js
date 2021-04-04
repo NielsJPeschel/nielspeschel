@@ -1,10 +1,76 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import {useState, useEffect} from 'react';
+import styled from 'styled-components';
+import Nav from '../components/nav/Nav';
+import Landing from '../components/landing/Landing';
+import Summary from '../components/summary/Summary';
 
-export default function Home() {
+
+const LandingPage = () => {
+  // const [scrollY, setScrollY] = useState(0);
+  const [scrollInfo, setScrollInfo] = useState({
+    scrollY: 0,
+    windowWidth: 0,
+    windowHeight: 0
+  })
+
+  // let w = window.innerWidth;
+  // let h = window.innerHeight;
+  
+  const calcShift = () => {
+    return scrollInfo.scrollY <= 0 ? 0 : ((scrollInfo.scrollY * scrollInfo.windowWidth)/scrollInfo.windowHeight);
+  }
+
+  const updateScroll = () => {
+    setScrollInfo({
+      scrollY: window.pageYOffset,
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight
+    })
+    // setScrollY(window.pageYOffset);
+  }
+  
+  useEffect(() => {
+      const watchScroll = () => {
+        window.addEventListener("scroll", updateScroll);
+      }
+      watchScroll();
+
+
+      return () => {
+        window.removeEventListener("scroll", updateScroll);
+      }
+
+  })
   return (
-    <div>
-      Under construction
-    </div>
+    <ScrollArea>
+          <Nav />
+          <FixedCanvas>
+              <Landing shift = {calcShift()} />
+              <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
+          </FixedCanvas>
+    </ScrollArea>
+
   )
 }
+
+
+export default LandingPage;
+
+
+const ScrollArea = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 300vh;
+`;
+
+const FixedCanvas = styled.div`
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: calc(100vh - 80px);
+  width: 100vw;
+  background: blue;
+  overflow: none;
+`;
