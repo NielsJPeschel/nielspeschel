@@ -1,20 +1,21 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import Title from '../../public/title.svg';
 
 const Landing = ( props ) => {
     const { shift } = props;
     return (
         <Background shift = {shift} >
             <Content>
-                <div></div>
-                <Title id = "title">
+                <Title />
+                {/* <Title id = "title">
                     <Image
                         src = "/../public/title.svg"
                         height = "1000"
                         width = "1000"
                         layout = "responsive"
                     />
-                </Title>
+                </Title> */}
                 <Line />
             </Content>
             
@@ -48,20 +49,27 @@ const Content = styled.div`
     width: 100%;
     height: 100%;
 
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        width: 50vw;
+    }
 `;
 
-const Title = styled.div`
-    display: block;
-    width: 50vw;
-    height: 50vh;
-    /* max-width: 50vw;
-    max-height: 50vh; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -80%);
+// const Title = styled.div`
+//     display: block;
+//     width: 50vw;
+//     height: 50vh;
+//     /* max-width: 50vw;
+//     max-height: 50vh; */
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -80%);
     
-`;
+// `;
 
 const Line = styled.div`
     width: 10%;

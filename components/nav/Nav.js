@@ -1,16 +1,18 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import Logo from '../../public/nielspeschel.svg'
 
 const Nav = () => {
     return (
         <NavStyle>
             <div>
-                <Image 
+                <Logo />
+                {/* <Image 
                     src = '/../public/nielspeschel.svg'
                     height = '70'
                     width = '300'
                     layout = 'fixed'
-                />
+                /> */}
                 <ul>
                     <li>About</li>
                     <li>Work</li>
@@ -38,6 +40,10 @@ const NavStyle = styled.nav`
     width: 100vw;
     padding: 0 50px;
     justify-content: space-between;
+    svg {
+        height: 40px;
+        margin-top: 15px;
+    }
 
     div {
         display: flex;
