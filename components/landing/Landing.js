@@ -77,7 +77,7 @@ const Line = styled.div`
         position: relative;
         left: -170px;
         top: -9px;
-        content: "scroll to learn more";
+        content: "scroll down for more";
         width: 400px;
         white-space: nowrap;
    }

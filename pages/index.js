@@ -62,15 +62,14 @@ const ScrollArea = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 300vh;
+  height: 700vh;
 `;
 
 const FixedCanvas = styled.div`
   position: fixed;
-  top: 80px;
+  top: 60px;
   left: 0;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   width: 100vw;
-  background: blue;
   overflow: none;
 `;

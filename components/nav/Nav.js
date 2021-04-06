@@ -7,8 +7,9 @@ const Nav = () => {
             <div>
                 <Image 
                     src = '/../public/nielspeschel.svg'
-                    height = '70px'
-                    width = 'auto'
+                    height = '70'
+                    width = '300'
+                    layout = 'fixed'
                 />
                 <ul>
                     <li>About</li>
@@ -27,7 +28,7 @@ const Nav = () => {
 export default Nav;
 
 const NavStyle = styled.nav`
-    height: 80px;
+    height: 60px;
     position: fixed;
     top: 0;
     left: 0;
@@ -35,7 +36,7 @@ const NavStyle = styled.nav`
     flex-direction: row;
     background: white;
     width: 100vw;
-    padding: 10px 50px;
+    padding: 0 50px;
     justify-content: space-between;
 
     div {
@@ -44,11 +45,11 @@ const NavStyle = styled.nav`
     }
     ul {
         list-style: none;
-        margin: 7px 40px;
+        margin: 10px 40px;
         li {
-            font-size: 14pt;
+            font-size: 0.8rem;
             display: inline;
-            padding: 0 75px;
+            padding: 0 10%;
             text-transform: uppercase;
             :hover {
                 border-bottom: 2px solid black;
@@ -57,13 +58,20 @@ const NavStyle = styled.nav`
     }
 
     button {
-        background: black;
         color: white;
-        border: none;
-        margin: 10px;
+        border: 1px solid black;
+        margin-top: 10px;
+        margin-bottom: 20px;
         padding: 5px 50px;
-        font-size: 14pt;
+        font-size: 0.8rem;
         text-transform: uppercase;
+        background: black;
+
+        :hover {
+            background: white;
+            color: black;
+            cursor: grab;
+        }
     }
 
 `;
