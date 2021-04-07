@@ -6,15 +6,13 @@ import Summary from '../components/summary/Summary';
 
 
 const LandingPage = () => {
-  // const [scrollY, setScrollY] = useState(0);
   const [scrollInfo, setScrollInfo] = useState({
     scrollY: 0,
     windowWidth: 0,
     windowHeight: 0
   })
 
-  // let w = window.innerWidth;
-  // let h = window.innerHeight;
+
   
   const calcShift = () => {
     return scrollInfo.scrollY <= 0 ? 0 : ((scrollInfo.scrollY * scrollInfo.windowWidth)/scrollInfo.windowHeight);
@@ -26,7 +24,6 @@ const LandingPage = () => {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight
     })
-    // setScrollY(window.pageYOffset);
   }
   
   useEffect(() => {

@@ -8,14 +8,6 @@ const Landing = ( props ) => {
         <Background shift = {shift} >
             <Content>
                 <Title />
-                {/* <Title id = "title">
-                    <Image
-                        src = "/../public/title.svg"
-                        height = "1000"
-                        width = "1000"
-                        layout = "responsive"
-                    />
-                </Title> */}
                 <Line />
             </Content>
             
@@ -57,19 +49,6 @@ const Content = styled.div`
         width: 50vw;
     }
 `;
-
-// const Title = styled.div`
-//     display: block;
-//     width: 50vw;
-//     height: 50vh;
-//     /* max-width: 50vw;
-//     max-height: 50vh; */
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -80%);
-    
-// `;
 
 const Line = styled.div`
     width: 10%;
