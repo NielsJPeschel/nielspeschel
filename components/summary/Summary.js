@@ -3,13 +3,19 @@ import Image from 'next/image';
 import TopHeavyDev from '../../public/topheavydev.svg';
 
 const Summary = ( props ) => {
-    const { shift, scrollInfo } = props;
+    const { shift, scrollInfo, scrollInfo: {scrollY, windowHeight, windowWidth} } = props;
+
 
     const calcShift = () => {
         if(shift < scrollInfo.windowWidth){
             return shift;
+        } else if (shift > windowWidth && shift <= 8 * windowWidth) {
+            // console.log(shift - (7 * windowWidth));
+            return windowWidth;
+        } else if(shift < 9 * scrollInfo.windowWidth ){
+            return shift - 7 * windowWidth;
         } else {
-            return scrollInfo.windowWidth;
+            return 2 * windowWidth;
         }
     }
 
@@ -21,8 +27,14 @@ const Summary = ( props ) => {
         else if (scrollInfo.windowWidth <= shift && shift < 2 * scrollInfo.windowWidth){
             return (100*(scrollInfo.scrollY - (scrollInfo.windowHeight))/scrollInfo.windowHeight)
         }
+        else if ( 2 * scrollInfo.windowWidth <= shift && shift < 7 * scrollInfo.windowWidth){
+            return 100
+        }
+        else if (7 * scrollInfo.windowWidth <= shift && shift < 8 * scrollInfo.windowWidth){
+            return 100 - (100*(scrollInfo.scrollY - (7 * scrollInfo.windowHeight))/scrollInfo.windowHeight)
+        }
         else { 
-            return 100;
+            return 0;
         }
     }
 
@@ -48,16 +60,11 @@ const Summary = ( props ) => {
             return 1 - ((shift - ((i + 1) * scrollInfo.windowWidth)) / scrollInfo.windowWidth);
         }
     }
-    const calcAlgorithmOpacity = () => {
-
-    }
-    const calcDeveloperOpacity = () => {
-
-    }
+    
     return (
-        <Background shift = {calcShift()}>
-            <Transition height = {calcContentHeight()}>
-                <Content opacity = {calcContentHeight()} svgTranslate = {calcSvgTranslate()}>
+        <Background style = {{left: `calc(100vw - ${calcShift()}px)`}}>
+            <Transition  style = {{ height: `${calcContentHeight()}%`, top: `${50 - (0.5 * calcContentHeight())}%`}}>
+                <Content opacity = {calcContentHeight()} svgTranslate = {calcSvgTranslate()}  style = {{opacity: calcContentHeight()/100}}>
                     <TopHeavyDev />
                     <p>
                         I am a kinetic full stack developer - blending function and design - 
@@ -66,18 +73,29 @@ const Summary = ( props ) => {
                         end-user visions and technical realization.
                     </p>
                     <Descriptions>
-                        <Designer opacity = {calcDescriptionOpacity(3)}>
+                        <div style = {{opacity: calcDescriptionOpacity(3)}}>
                             <h1>Designer</h1>
-                            <p>I began as a graphic designer, always aiming for a unique, creative, yet calculated, approach to designing. Since then, I have created numerous brands, logos, and experiences for a wide range of audiences </p>
-                        </Designer>
-                        <Developer opacity = {calcDescriptionOpacity(5)}>
+                            <p>
+                                Beginning as a graphic designer, I always aim for unique, creative, 
+                                yet calculated, approaches to my craft. I have launched numerous brands, 
+                                logos, and experiences for a wide range of audiences 
+                            </p>
+                        </div>
+                        <div style = {{opacity: calcDescriptionOpacity(5)}}>
                             <h1>Developer</h1>
-                            <p>My diverse background uniquely positions me to </p>
-                        </Developer>
-                        <Algorithm opacity = {calcDescriptionOpacity(4)}>
+                            <p>
+                                This diverse background bridges the gap between 
+                                end-user visions and technical realization. <b>Coding as an art.</b>
+                            </p>
+                        </div>
+                        <div style = {{opacity: calcDescriptionOpacity(4) }}>
                             <h1>Algorithm Researcher</h1>
-                            <p>My  education  and passions in mathematics led me to research algorithms,  to which I developed and derived several algorithms that ranged from natural language querying to solving greedy clustering computations</p>
-                        </Algorithm>
+                            <p>
+                                Mathematical and analytical skills led me to a degree in Computer Science and Engineering,
+                                where I heavily researched algorithms. In this capacity, my experiences ranged from natural 
+                                language querying to solving greedy clustering computations.
+                            </p>
+                        </div>
                     </Descriptions>
                 </Content>
             </Transition>
@@ -89,20 +107,16 @@ export default Summary;
 const Background = styled.div`
     position: absolute;
     top: 0;
-    left: calc( 100vw - ${props => (props.shift)}px);
     width: 100vw;
     height: 100%;
     background: white;
 `;
 
-
 const Transition = styled.div`
     position: absolute;
     width: 100vw;
-    height: ${props => props.height}%;
     border: 2px solid black;
     background: black;
-    top: calc(50% - ${props => 0.5 * props.height}%);
     overflow: hidden;
     
 `;
@@ -112,8 +126,7 @@ const Content = styled.div`
     width: 100%;
     height: 100%;
     padding: 5%;
-    opacity: ${props => props.opacity/100};
-    /* padding-top: 10%; */
+    
     img {
         margin-top: 20%;
     }
@@ -122,10 +135,15 @@ const Content = styled.div`
         font-size: 1.2rem;
         opacity: ${props => (1 - (props.svgTranslate /40))};
         margin-top: 15px;
+
+        span {
+            color: #ff40df;
+        }
     }
     svg {
         width: 70%;
         overflow: visible; 
+        
         .topheavydev_svg__title{
             opacity: ${props => (1 - (props.svgTranslate / 40))}
         }
@@ -134,9 +152,6 @@ const Content = styled.div`
         }
         .topheavydev_svg__midStack {
             transform: translate(0, ${props => props.svgTranslate }px);
-        }
-        .topheavydev_svg__topStack {
-            /* transform: translate(0, ${props => props.svgTranslate }px); */
         }
     }
    
@@ -148,8 +163,12 @@ const Descriptions = styled.div`
     position: absolute;
     top: 0;
     left: 67%;
-    width: 33%;
+    width: 25%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
     h1{ 
         color: white;
         text-transform: uppercase;
@@ -160,17 +179,8 @@ const Descriptions = styled.div`
         font-size: 0.9rem;
     }
     div {
-        margin: 17%;
+        padding: 5%;
+        border-left: 1px solid white;
+
     }
-`;
-const Designer = styled.div`
-    opacity: ${ props => (props.opacity)};
-`;
-
-const Algorithm = styled.div`
-    opacity: ${ props => (props.opacity)};
-`;
-
-const Developer = styled.div`
-    opacity: ${ props => (props.opacity)};
 `;

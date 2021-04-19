@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Nav from '../components/nav/Nav';
 import Landing from '../components/landing/Landing';
 import Summary from '../components/summary/Summary';
+import { Social } from '../components/social';
 
 
 const LandingPage = () => {
@@ -42,8 +43,9 @@ const LandingPage = () => {
     <ScrollArea>
           <Nav />
           <FixedCanvas>
-              <Landing shift = {calcShift()} />
-              <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
+            <Landing shift = {calcShift()} />
+            <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
+            <Social shift = {calcShift()} scrollInfo = {scrollInfo} />
           </FixedCanvas>
     </ScrollArea>
 
@@ -59,7 +61,7 @@ const ScrollArea = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 700vh;
+  height: 1000vh;
 `;
 
 const FixedCanvas = styled.div`

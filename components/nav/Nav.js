@@ -5,24 +5,14 @@ import Logo from '../../public/nielspeschel.svg'
 const Nav = () => {
     return (
         <NavStyle>
-            <div>
+
                 <Logo />
-                {/* <Image 
-                    src = '/../public/nielspeschel.svg'
-                    height = '70'
-                    width = '300'
-                    layout = 'fixed'
-                /> */}
                 <ul>
                     <li>About</li>
                     <li>Work</li>
                     <li>Social</li>
                 </ul>
-            </div>
-            <div>
-                <button>Contact</button>
-            </div>
-            
+    
         </NavStyle>
     );
 }
@@ -55,7 +45,7 @@ const NavStyle = styled.nav`
         li {
             font-size: 0.8rem;
             display: inline;
-            padding: 0 10%;
+            padding: 0 3vw;
             text-transform: uppercase;
             :hover {
                 border-bottom: 2px solid black;
