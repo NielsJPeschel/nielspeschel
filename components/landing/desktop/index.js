@@ -1,2 +1,0 @@
-export { DesktopLanding } from "./DesktopLanding";
-

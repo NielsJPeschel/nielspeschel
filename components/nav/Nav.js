@@ -1,10 +1,22 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 import Logo from '../../public/nielspeschel.svg'
+import {MenuButton, MobileNav} from './components'
+import {useState} from 'react'
 
 export const Nav = () => {
+    const [ showMobileNav, setShowMobileNav ] = useState(false);
+
+    const handleClick = () => {
+        console.log('clicked')
+        setShowMobileNav( prevVal => {
+            return !prevVal;
+        });
+    }
+
     return (
-        <NavStyle>
+        <div>
+            <MenuButton showMobileNav = {showMobileNav} handleClick = {handleClick}/>
+            <NavStyle>
 
                 <Logo />
                 <ul>
@@ -12,8 +24,14 @@ export const Nav = () => {
                     <li>Work</li>
                     <li>Social</li>
                 </ul>
-    
-        </NavStyle>
+               
+                
+
+
+            </NavStyle>
+            {showMobileNav && <MobileNav showMobileNav = {showMobileNav} /> }
+        </div>
+        
     );
 }
 
@@ -29,9 +47,14 @@ const NavStyle = styled.nav`
     width: 100vw;
     padding: 0 50px;
     justify-content: space-between;
-    svg {
+    overflow: visible;
+    /* svg {
+        
+    } */
+    .nielspeschel_svg__nielspeschel {
         height: 40px;
         margin-top: 15px;
+        
     }
 
     div {
@@ -50,24 +73,11 @@ const NavStyle = styled.nav`
                 border-bottom: 2px solid black;
             }
         }
-    }
-
-    button {
-        color: white;
-        border: 1px solid black;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        padding: 5px 50px;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        background: black;
-
-        :hover {
-            background: white;
-            color: black;
-            cursor: grab;
+        @media only screen and (max-width: 900px) {
+            display: none;
         }
     }
 
 `;
+
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TopHeavyDev from '../../../../public/topheavydev.svg';
+import TopHeavyDev from '../../../public/topheavydev.svg';
 
 export const Summary = ( props ) => {
     const { shift, scrollInfo, scrollInfo: {scrollY, windowHeight, windowWidth} } = props;

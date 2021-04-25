@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react';
-import { Landing, Summary, Social } from './components';
+import { Header, Summary, Social } from './components';
 import styled from 'styled-components';
-import {Nav} from '../../../components/nav';
+import {Nav} from '../../components/nav';
 // import Landing from '../components/landing/Landing';
 // import Summary from '../components/summary/Summary';
 // import { Social } from '../components/social';
 
-export const DesktopLanding = () => {
+export const Landing = () => {
   const [scrollInfo, setScrollInfo] = useState({
     scrollY: 0,
     windowWidth: 0,
@@ -43,7 +43,7 @@ export const DesktopLanding = () => {
     <ScrollArea>
           <Nav />
           <FixedCanvas>
-            <Landing shift = {calcShift()} />
+            <Header shift = {calcShift()} />
             <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
             <Social shift = {calcShift()} scrollInfo = {scrollInfo} />
           </FixedCanvas>

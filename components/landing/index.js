@@ -1,1 +1,2 @@
-export { DesktopLanding } from './desktop';
+export { Landing } from "./Landing";
+

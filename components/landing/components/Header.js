@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import Title from '../../../../public/title.svg';
+import Title from '../../../public/title.svg';
 
 
 
-export const Landing = ( props ) => {
+export const Header = ( props ) => {
     const { shift } = props;
     return (
         <Background shift = {shift} style = {{left: `${-shift}px`}}>
@@ -12,7 +12,6 @@ export const Landing = ( props ) => {
                 <Line />
             </Content>
         </Background>
-
     );
 }
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="menu" width="22" height="11.436" viewBox="0 0 22 11.436">
+  <g  transform="translate(0 0.5)">
+    <path class="top_line" data-name="Path 18" d="M0,0H22" fill="none" stroke="#000" stroke-width="1"/>
+    <path class="bottom_line" data-name="Path 19" d="M0,0H22" transform="translate(0 10.436)" fill="none" stroke="#000" stroke-width="1"/>
+  </g>
+</svg>
