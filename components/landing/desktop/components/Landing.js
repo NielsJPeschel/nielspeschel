@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import styled from 'styled-components';
-import Title from '../../public/title.svg';
+import Title from '../../../../public/title.svg';
 
 
 
-const Landing = ( props ) => {
+export const Landing = ( props ) => {
     const { shift } = props;
     return (
         <Background shift = {shift} style = {{left: `${-shift}px`}}>
@@ -18,7 +17,6 @@ const Landing = ( props ) => {
 }
 
 
-export default Landing;
 
 const Background = styled.div`
     position: absolute;

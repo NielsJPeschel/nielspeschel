@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import Image from 'next/image';
-import TopHeavyDev from '../../public/topheavydev.svg';
+import TopHeavyDev from '../../../../public/topheavydev.svg';
 
-const Summary = ( props ) => {
+export const Summary = ( props ) => {
     const { shift, scrollInfo, scrollInfo: {scrollY, windowHeight, windowWidth} } = props;
 
 
@@ -102,7 +101,6 @@ const Summary = ( props ) => {
         </Background>
     );
 }
-export default Summary;
 
 const Background = styled.div`
     position: absolute;

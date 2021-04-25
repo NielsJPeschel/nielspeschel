@@ -2,10 +2,15 @@ import styled from 'styled-components';
 
 
 // icons
-import Facebook from '../../public/social/facebook.svg'
-import Instagram from '../../public/social/instagram.svg'
-import LinkedIn from '../../public/social/linkedin.svg'
-import Mail from '../../public/social/mail.svg'
+// import Facebook from '../../../public/social/facebook.svg'
+// import Instagram from '../../../public/social/instagram.svg'
+// import LinkedIn from '../../../public/social/linkedin.svg'
+// import Mail from '../../../public/social/mail.svg'
+
+import Facebook from '../../../../public/social/facebook.svg';
+import Instagram from '../../../../public/social/instagram.svg';
+import LinkedIn from '../../../../public/social/linkedin.svg';
+import Mail from '../../../../public/social/mail.svg';
 
 
 

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Logo from '../../public/nielspeschel.svg'
 
-const Nav = () => {
+export const Nav = () => {
     return (
         <NavStyle>
 
@@ -17,7 +17,6 @@ const Nav = () => {
     );
 }
 
-export default Nav;
 
 const NavStyle = styled.nav`
     height: 60px;
