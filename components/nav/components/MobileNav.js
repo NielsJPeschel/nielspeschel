@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import N from '../../../public/n.svg'
+import N from '../../../public/N.svg'
 import {useState, useEffect} from 'react';
 
 export const MobileNav = ( props ) => {
