@@ -48,14 +48,20 @@ const NavStyle = styled.nav`
     padding: 0 50px;
     justify-content: space-between;
     overflow: visible;
-    /* svg {
-        
-    } */
+
     .nielspeschel_svg__nielspeschel {
         height: 40px;
         margin-top: 15px;
         
     }
+    @media only screen and (max-width: 900px) {
+        padding: 0 10px;
+        
+        .nielspeschel_svg__nielspeschel {
+            height: 35px;
+        }
+    }
+    
 
     div {
         display: flex;

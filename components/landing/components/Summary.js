@@ -61,7 +61,7 @@ export const Summary = ( props ) => {
     }
     
     return (
-        <Background style = {{left: `calc(100vw - ${calcShift()}px)`}}>
+        <Background  style = {{left: `calc(100vw - ${calcShift()}px)`}}>
             <Transition  style = {{ height: `${calcContentHeight()}%`, top: `${50 - (0.5 * calcContentHeight())}%`}}>
                 <Content opacity = {calcContentHeight()} svgTranslate = {calcSvgTranslate()}  style = {{opacity: calcContentHeight()/100}}>
                     <TopHeavyDev />
@@ -108,6 +108,14 @@ const Background = styled.div`
     width: 100vw;
     height: 100%;
     background: white;
+    @media only screen and (max-width: 600px) { 
+        left: 0 !important;
+        background: red;
+        position: relative;
+        top: 0 !important;
+        height: auto;
+
+    }
 `;
 
 const Transition = styled.div`
@@ -116,6 +124,15 @@ const Transition = styled.div`
     border: 2px solid black;
     background: black;
     overflow: hidden;
+    @media only screen and (max-width: 600px) { 
+        left: 0 !important;
+        top: 0 !important;
+        height: 100vh !important;
+        width: 100vw;
+        position: relative;
+        border: none;
+        
+    }
     
 `;
 
@@ -124,6 +141,18 @@ const Content = styled.div`
     width: 100%;
     height: 100%;
     padding: 5%;
+    
+    @media only screen and (max-width: 600px) {
+        opacity: 1.0 !important;
+        position: relative;
+
+        p {
+            position: relative;
+            font-size: 1rem;
+
+        }
+
+    }
     
     img {
         margin-top: 20%;
@@ -150,6 +179,18 @@ const Content = styled.div`
         }
         .topheavydev_svg__midStack {
             transform: translate(0, ${props => props.svgTranslate }px);
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 120%;
+            position: relative;
+            margin: 50px 0;
+            .topheavydev_svg__title, .topheavydev_svg__bottomStack, .topheavydev_svg__midStack {
+                opacity: 1 !important;
+                transform: none;
+            }
+           
+
         }
     }
    
@@ -179,6 +220,15 @@ const Descriptions = styled.div`
     div {
         padding: 5%;
         border-left: 1px solid white;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        /* position: relative;
+        top: 0;
+        left: 0; */
+        display: none;
+        height: auto;
 
     }
 `;

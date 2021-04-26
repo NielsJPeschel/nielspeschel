@@ -7,6 +7,8 @@ export const MenuButton = ( props ) => {
         <Button  clicked = {showMobileNav} onClick = {handleClick}>
             <Line darkMode = {showMobileNav}/>
             <Line darkMode = {showMobileNav}/>
+            {/* <Line darkMode = {!showMobileNav}/>
+            <Line darkMode = {!showMobileNav}/> */}
         </Button>
 
     )
@@ -16,13 +18,13 @@ export const MenuButton = ( props ) => {
 
 const Button = styled.button`
     position: fixed;
-    right: 5%;
+    right: 15px;
     top: 15px;
     /* display: block; */
     cursor: grab;
     background: rgba(0,0,0,0);
     border: none;
-    height: 40px;
+    height: 24px;
     /* padding: 15px; */
     z-index: 99999;
 
@@ -41,6 +43,8 @@ const Button = styled.button`
 `;
 
 const Line = styled.div`
+    position: relative;
+    display: block;
     width: 28px;
     height: 1px;
     /* background: blue; */
@@ -48,4 +52,16 @@ const Line = styled.div`
     margin: 0 0 10px 0;
     transition: all 0.25s ease-out;
     transform: rotate(180deg);
+
+    ::before {
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        background: white;
+        /* background: ${ props => !props.darkMode ? 'white' :  'black'}; */
+        width: 28px;
+        height: 1px;
+        content: ''
+    }
+    /* border-top: 1px solid white; */
 `

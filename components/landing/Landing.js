@@ -74,4 +74,13 @@ const FixedCanvas = styled.div`
   width: 100vw;
   overflow: none;
 
+  @media only screen and (max-width: 600px) { 
+    position: absolute;
+    left: 0;
+    top: 60px;
+    height: 200vh;
+    background: white;;
+  }
+  
+
 `;

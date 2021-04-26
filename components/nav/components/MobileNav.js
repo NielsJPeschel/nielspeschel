@@ -1,12 +1,17 @@
 import styled from 'styled-components';
-import Logo from '../../../public/nielspeschel.svg'
-
+import N from '../../../public/n.svg'
+import {useState, useEffect} from 'react';
 
 export const MobileNav = ( props ) => {
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+        setHeight(100);
+    }, [])
     const {showMobileNav} = props
     return (
-        <Backgound show = {showMobileNav} >
-            <Logo fill = 'white' />
+        <Backgound height = {height} show = {showMobileNav} >
+            <N fill = 'white' />
             <ul>
                 <li>About</li>
                 <li>Work</li>
@@ -26,19 +31,21 @@ const Backgound = styled.div`
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: ${props => props.height}vh;
     background: black;
     color: white;
     z-index: 100;
-    transition: all 0.25s ease-out;
+    transition: height 0.5s;
     text-align: center;
-    padding: 100px 25px;
+    padding: 0 25px;
+    overflow: hidden;
     /* ${props => props.show ? '' : 'display: none'} */
 
     svg {
         stroke: white;
         fill: white;
-        width: 400px;
+        width: 200px;
+        margin-top: 100px;
         margin-bottom: 20px;
     }
     ul {

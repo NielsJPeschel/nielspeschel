@@ -9,6 +9,11 @@ export const Header = ( props ) => {
         <Background shift = {shift} style = {{left: `${-shift}px`}}>
             <Content>
                 <Title />
+                <h1>
+                    Coding<br />
+                    As An<br />
+                    Art
+                </h1>
                 <Line />
             </Content>
         </Background>
@@ -24,6 +29,11 @@ const Background = styled.div`
     width: 100%;
     height: 100%;
     background: white;
+    @media only screen and (max-width: 600px) { 
+        position: relative;
+        left: 0 !important;
+        height: 80vh;
+    }
 `;
 
 
@@ -34,6 +44,11 @@ const Content = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+    @media only screen and (max-width: 600px) { 
+        height: 90vh;
+
+    }
+    
 
     svg {
         position: absolute;
@@ -41,6 +56,24 @@ const Content = styled.div`
         left: 50%;
         transform: translate(-50%, -40%);
         width: 55vw;
+        @media only screen and (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translate(0, -50%);
+        text-align: right;
+        font-size: 70px;
+        text-transform: uppercase;
+        font-weight: lighter;
+        line-height: 90px;
+        @media only screen and (min-width: 600px) { 
+            display: none
+    }
     }
 `;
 
@@ -52,6 +85,10 @@ const Line = styled.div`
     position: absolute;
     top: 50%;
     right: 0;
+    
+    @media only screen and (max-width: 900px) {
+        display: none;
+    }
     
     ::before {
         font-size: 12pt;

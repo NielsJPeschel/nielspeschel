@@ -69,6 +69,12 @@ const Background = styled.div`
         }
     }
 
+    @media only screen and (max-width: 600px) {
+        position: relative;
+        left: 0 !important;
+        height: 20vh;
+    }
+
 `;
 
 const Line = styled.div`
@@ -79,5 +85,8 @@ const Line = styled.div`
     position: absolute;
     top: 50%;
     left: 0;
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
 
 `;
