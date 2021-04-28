@@ -5,7 +5,7 @@ export const NavLi = ( props ) => {
 
     return (
         <Li>
-                {children}
+            {children}
         </Li>
     );
 

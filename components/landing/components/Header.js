@@ -4,9 +4,9 @@ import Title from '../../../public/title.svg';
 
 
 export const Header = ( props ) => {
-    const { shift } = props;
+    const { shift, scrollInfo, scrollInfo: {scrollY, windowHeight, windowWidth}  } = props;
     return (
-        <Background shift = {shift} style = {{left: `${-shift}px`}}>
+        <Background shift = {shift} style = {{left: `${-100*(shift/windowWidth)}%`}}>
             <Content>
                 <Title />
                 <h1>

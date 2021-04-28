@@ -43,7 +43,7 @@ export const Landing = () => {
     <ScrollArea>
           <Nav />
           <FixedCanvas>
-            <Header shift = {calcShift()} />
+            <Header shift = {calcShift()} scrollInfo = {scrollInfo}/>
             <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
             <Social shift = {calcShift()} scrollInfo = {scrollInfo} />
           </FixedCanvas>

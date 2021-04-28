@@ -5,19 +5,31 @@ export const Summary = ( props ) => {
     const { shift, scrollInfo, scrollInfo: {scrollY, windowHeight, windowWidth} } = props;
 
 
+    // const calcShift = () => {
+    //     if(shift < scrollInfo.windowWidth){
+    //         return shift;
+    //     } else if (shift > windowWidth && shift <= 8 * windowWidth) {
+    //         // console.log(shift - (7 * windowWidth));
+    //         return windowWidth;
+    //     } else if(shift < 9 * scrollInfo.windowWidth ){
+    //         return shift - 7 * windowWidth;
+    //     } else {
+    //         return 2 * windowWidth;
+    //     }
+    // }
+
     const calcShift = () => {
         if(shift < scrollInfo.windowWidth){
-            return shift;
+            return 100 * (shift/windowWidth);
         } else if (shift > windowWidth && shift <= 8 * windowWidth) {
             // console.log(shift - (7 * windowWidth));
-            return windowWidth;
+            return 100;
         } else if(shift < 9 * scrollInfo.windowWidth ){
-            return shift - 7 * windowWidth;
+            return 100 *((shift - 7 * windowWidth)/windowWidth);
         } else {
-            return 2 * windowWidth;
+            return 200;
         }
     }
-
     const calcContentHeight = () => {
 
         if(shift < scrollInfo.windowWidth){
@@ -69,7 +81,7 @@ export const Summary = ( props ) => {
     }
     
     return (
-        <Background  style = {{left: `calc(100vw - ${calcShift()}px)`}}>
+        <Background  style = {{left: `calc(100vw - ${calcShift()}%)`}}>
             <Transition  style = {{ height: `${calcContentHeight()}%`, top: `${50 - (0.5 * calcContentHeight())}%`}}>
                 <Content opacity = {calcContentHeight()} svgTranslate = {calcSvgTranslate()}  style = {{opacity: calcContentHeight()/100}}>
                     <TopHeavyDev />
@@ -182,12 +194,24 @@ const Content = styled.div`
         
         .topheavydev_svg__title{
             opacity: ${props => (1 - (props.svgTranslate / 40))}
+
         }
         .topheavydev_svg__bottomStack{
-            transform: translate(0, ${props => (2 * props.svgTranslate) }px);
+            transform: translate(0, ${props => (2 * props.svgTranslate)}px);
         }
         .topheavydev_svg__midStack {
             transform: translate(0, ${props => props.svgTranslate }px);
+
+            ::after {
+                content: 'hi my name is Niels';
+                position: relative;
+                right: 0;
+                top: 0;
+                color: white;
+                background: blue;
+                width: 100px;
+                height: 100px;
+            }
         }
 
         @media only screen and (max-width: 900px) {
