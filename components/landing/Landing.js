@@ -60,7 +60,7 @@ const ScrollArea = styled.div`
   width: 100vw;
   height: 1000vh;
   
-  @media only screen and (max-width: 600px) { 
+  @media only screen and (max-width: 900px) { 
     height: auto;
   }
 
@@ -74,7 +74,7 @@ const FixedCanvas = styled.div`
   width: 100vw;
   overflow: none;
 
-  @media only screen and (max-width: 600px) { 
+  @media only screen and (max-width: 900px) { 
     position: absolute;
     left: 0;
     top: 60px;

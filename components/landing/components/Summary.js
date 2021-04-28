@@ -49,15 +49,23 @@ export const Summary = ( props ) => {
         }
     }
     const calcDescriptionOpacity = (i) => {
+        var opacity;
         if(shift < i * scrollInfo.windowWidth){
-            return 0;
+            opacity =  0;
         }
         else if (shift >= i * scrollInfo.windowWidth &&  shift < (i + 1) * scrollInfo.windowWidth){
-            return (shift - (i * scrollInfo.windowWidth)) / scrollInfo.windowWidth;
+            opacity =  (shift - (i * scrollInfo.windowWidth)) / scrollInfo.windowWidth;
         }
         else {
-            return 1 - ((shift - ((i + 1) * scrollInfo.windowWidth)) / scrollInfo.windowWidth);
+            opacity =  1 - ((shift - ((i + 1) * scrollInfo.windowWidth)) / scrollInfo.windowWidth);
         }
+
+        if(isNaN(opacity)) {
+            return 0;
+        } else {
+            return opacity;
+        }
+
     }
     
     return (
@@ -108,7 +116,7 @@ const Background = styled.div`
     width: 100vw;
     height: 100%;
     background: white;
-    @media only screen and (max-width: 600px) { 
+    @media only screen and (max-width: 900px) { 
         left: 0 !important;
         background: red;
         position: relative;
@@ -124,7 +132,7 @@ const Transition = styled.div`
     border: 2px solid black;
     background: black;
     overflow: hidden;
-    @media only screen and (max-width: 600px) { 
+    @media only screen and (max-width: 900px) { 
         left: 0 !important;
         top: 0 !important;
         height: 100vh !important;
@@ -142,13 +150,14 @@ const Content = styled.div`
     height: 100%;
     padding: 5%;
     
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 900px) {
         opacity: 1.0 !important;
         position: relative;
 
         p {
             position: relative;
-            font-size: 1rem;
+            font-size: 1rem !important;
+            line-height: 1.8rem;
 
         }
 
@@ -181,7 +190,7 @@ const Content = styled.div`
             transform: translate(0, ${props => props.svgTranslate }px);
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 900px) {
             width: 120%;
             position: relative;
             margin: 50px 0;
@@ -223,12 +232,8 @@ const Descriptions = styled.div`
 
     }
 
-    @media only screen and (max-width: 600px) {
-        /* position: relative;
-        top: 0;
-        left: 0; */
+    @media only screen and (max-width: 900px) {
         display: none;
-        height: auto;
 
     }
 `;

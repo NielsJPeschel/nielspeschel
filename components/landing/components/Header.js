@@ -29,7 +29,7 @@ const Background = styled.div`
     width: 100%;
     height: 100%;
     background: white;
-    @media only screen and (max-width: 600px) { 
+    @media only screen and (max-width: 900px) { 
         position: relative;
         left: 0 !important;
         height: 80vh;
@@ -44,7 +44,7 @@ const Content = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    @media only screen and (max-width: 600px) { 
+    @media only screen and (max-width: 900px) { 
         height: 90vh;
 
     }
@@ -71,7 +71,7 @@ const Content = styled.div`
         text-transform: uppercase;
         font-weight: lighter;
         line-height: 90px;
-        @media only screen and (min-width: 600px) { 
+        @media only screen and (min-width: 900px) { 
             display: none
     }
     }

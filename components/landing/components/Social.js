@@ -43,14 +43,12 @@ const Background = styled.div`
         position: absolute;
         top: 10%;
         left: 10%;;
-        /* transform: translate(-50%, -50%); */
         list-style: none;
         width: 80%;
         height: 80%;
         justify-content: center;
         align-items: center;
-        /* align-items: center; */
-        /* white-space: nowrap; */
+
 
         li {
             display: inline;
@@ -69,7 +67,7 @@ const Background = styled.div`
         }
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 900px) {
         position: relative;
         left: 0 !important;
         height: 20vh;
@@ -85,7 +83,7 @@ const Line = styled.div`
     position: absolute;
     top: 50%;
     left: 0;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 900px) {
         display: none;
     }
 

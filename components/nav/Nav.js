@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Logo from '../../public/nielspeschel.svg'
-import {MenuButton, MobileNav} from './components'
+import {MenuButton, MobileNav, NavLi} from './components'
 import {useState} from 'react'
 
 export const Nav = () => {
@@ -20,9 +20,9 @@ export const Nav = () => {
 
                 <Logo />
                 <ul>
-                    <li>About</li>
-                    <li>Work</li>
-                    <li>Social</li>
+                    <NavLi>About</NavLi>
+                    <NavLi>Work</NavLi>
+                    <NavLi>Social</NavLi>
                 </ul>
                
                 
@@ -70,7 +70,7 @@ const NavStyle = styled.nav`
     ul {
         list-style: none;
         margin: 10px 40px;
-        li {
+        /* li {
             font-size: 0.8rem;
             display: inline;
             padding: 0 3vw;
@@ -78,7 +78,7 @@ const NavStyle = styled.nav`
             :hover {
                 border-bottom: 2px solid black;
             }
-        }
+        } */
         @media only screen and (max-width: 900px) {
             display: none;
         }
