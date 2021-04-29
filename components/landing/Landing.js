@@ -41,8 +41,10 @@ export const Landing = () => {
   })
   return (
     <ScrollArea>
-          <Nav />
-          <FixedCanvas>
+          <div style = {{position: 'fixed'}}>
+            <Nav />
+          </div>
+          <FixedCanvas> 
             <Header shift = {calcShift()} scrollInfo = {scrollInfo}/>
             <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
             <Social shift = {calcShift()} scrollInfo = {scrollInfo} />

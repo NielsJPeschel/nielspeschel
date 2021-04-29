@@ -1,34 +1,31 @@
 import styled from 'styled-components';
 
-import Facebook from '../../../public/social/facebook.svg';
-import Instagram from '../../../public/social/instagram.svg';
-import LinkedIn from '../../../public/social/linkedin.svg';
-import Mail from '../../../public/social/mail.svg';
+import Facebook from '../../public/social/facebook.svg';
+import Instagram from '../../public/social/instagram.svg';
+import LinkedIn from '../../public/social/linkedin.svg';
+import Mail from '../../public/social/mail.svg';
 
 
 
 
-
-export const Social = ( props ) => {
-    const { shift, scrollInfo, scrollInfo: {scrollY, windowHeight, windowWidth} } = props;
+export const Social = () => {
     return (
-        <Background style = {{left: `${shift === 0? 500000: 9 * windowWidth - shift}px`}}>
+        <Background>
             <ul>
                 <li><a href = "https://www.facebook.com/niels.peschel/"><Facebook /></a></li>
                 <li><a  href = "https://www.instagram.com/nielspeschel/" ><Instagram /></a></li>
                 <li><a  href = "https://www.linkedin.com/in/niels-peschel-23038b15b/"><LinkedIn /></a></li>
                 <li><a  href = "mailto:peschel.niels@gmail.com"><Mail /></a></li>
             </ul>
-            <Line />
         </Background>
     )
 }
 
 const Background = styled.div`
-    position: absolute;
-    top: 0;
     width: 100%;
     height: 100%;
+    position: relative;
+    padding: 50px 0;;
 
     ul {
         display: flex;
@@ -59,25 +56,4 @@ const Background = styled.div`
             fill: #fc0093;
         }
     }
-
-    @media only screen and (max-width: 900px) {
-        position: relative;
-        left: 0 !important;
-        height: 20vh;
-    }
-
-`;
-
-const Line = styled.div`
-    width: 10%;
-    height: 4px;
-    background: black;   
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    @media only screen and (max-width: 900px) {
-        display: none;
-    }
-
 `;

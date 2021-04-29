@@ -41,7 +41,7 @@ export const Nav = () => {
 
 const NavStyle = styled.nav`
     height: 60px;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     display: flex;
