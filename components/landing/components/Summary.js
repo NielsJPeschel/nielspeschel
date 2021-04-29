@@ -148,7 +148,7 @@ const Transition = styled.div`
     @media only screen and (max-width: 900px) { 
         left: 0 !important;
         top: 0 !important;
-        height: 100vh !important;
+        min-height: 100vh !important;
         width: 100vw;
         position: relative;
         border: none;

@@ -45,7 +45,7 @@ const Content = styled.div`
     width: 100%;
     height: 100%;
     @media only screen and (max-width: 900px) { 
-        height: 90vh;
+        min-height: 80vh;
 
     }
     

@@ -41,9 +41,9 @@ export const Landing = () => {
   })
   return (
     <ScrollArea>
-          <div style = {{position: 'fixed'}}>
+          <NavWrapper>
             <Nav />
-          </div>
+          </NavWrapper>
           <FixedCanvas> 
             <Header shift = {calcShift()} scrollInfo = {scrollInfo}/>
             <Summary shift = {calcShift()} scrollInfo = {scrollInfo}/>
@@ -54,7 +54,13 @@ export const Landing = () => {
   )
 }
 
+const NavWrapper = styled.div`
+  position: fixed;
+  @media only screen and (max-width: 900px) { 
+    position: absolute;
+  }
 
+`;
 const ScrollArea = styled.div`
   position: absolute;
   top: 0;
