@@ -69,7 +69,8 @@ export const Summary = ( props ) => {
             opacity =  (shift - (i * scrollInfo.windowWidth)) / scrollInfo.windowWidth;
         }
         else {
-            opacity =  1 - ((shift - ((i + 1) * scrollInfo.windowWidth)) / scrollInfo.windowWidth);
+            opacity = 1;
+            // opacity =  1 - ((shift - ((i + 1) * scrollInfo.windowWidth)) / scrollInfo.windowWidth);
         }
 
         if(isNaN(opacity)) {
@@ -251,8 +252,8 @@ const Descriptions = styled.div`
         font-size: 0.9rem;
     }
     div {
-        padding: 5%;
-        border-left: 1px solid white;
+        padding: 5% 0;
+        /* border-left: 1px solid white; */
 
     }
 

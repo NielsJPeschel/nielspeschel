@@ -13,23 +13,30 @@ export const NavLi = ( props ) => {
 
 
 const Li = styled.li`
-    background-image: linear-gradient(black, black), linear-gradient(white, white);
-    background-size: 0 100%, auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    transition: all .4s ease-out;
     display: inline;
-    padding: 5px 40px;
     text-transform: uppercase;
     font-size: 0.8rem;
 
+    a {
+        background-image: linear-gradient(black, black), linear-gradient(white, white);
+        background-size: 0 100%, auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: all .4s ease-out;
+        padding: 5px 40px;
+        
 
-
-    :hover {
-
-        color: white;
-        background-size: 100% 100%, auto;
-        cursor:pointer;
+        :hover, :focus {
+            color: white;
+            background-size: 100% 100%, auto;
+            cursor:pointer;
+            outline: none;
+        }
     }
+    
+
+
+
+    
     
 `;

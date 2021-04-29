@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Logo from '../../public/nielspeschel.svg'
+import Logo from '../../public/nielspeschel.svg';
+import Link from 'next/link'
 import {MenuButton, MobileNav, NavLi} from './components'
 import {useState} from 'react'
 
@@ -17,12 +18,14 @@ export const Nav = () => {
         <div>
             <MenuButton showMobileNav = {showMobileNav} handleClick = {handleClick}/>
             <NavStyle>
-
-                <Logo />
+                <Link href = './'>
+                    <Logo />
+                </Link>
+                
                 <ul>
-                    <NavLi>About</NavLi>
-                    <NavLi>Work</NavLi>
-                    <NavLi>Social</NavLi>
+                    <NavLi><Link href="/about">About</Link></NavLi>
+                    <NavLi><Link href="/work">Work</Link></NavLi>
+                    <NavLi><Link href="/fun">Fun</Link></NavLi>
                 </ul>
                
                 
@@ -52,7 +55,7 @@ const NavStyle = styled.nav`
     .nielspeschel_svg__nielspeschel {
         height: 40px;
         margin-top: 15px;
-        
+        cursor: pointer;
     }
     @media only screen and (max-width: 900px) {
         padding: 0 10px;
@@ -67,6 +70,8 @@ const NavStyle = styled.nav`
         display: flex;
         flex-direction: row;
     }
+
+
     ul {
         list-style: none;
         margin: 10px 40px;
