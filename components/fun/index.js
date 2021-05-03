@@ -1,0 +1,1 @@
+export { FunPage } from './FunPage';

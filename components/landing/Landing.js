@@ -2,9 +2,6 @@ import {useState, useEffect} from 'react';
 import { Header, Summary, Social } from './components';
 import styled from 'styled-components';
 import {Nav} from '../../components/nav';
-// import Landing from '../components/landing/Landing';
-// import Summary from '../components/summary/Summary';
-// import { Social } from '../components/social';
 
 export const Landing = () => {
   const [scrollInfo, setScrollInfo] = useState({

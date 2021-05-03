@@ -1,9 +1,9 @@
-import {PageLayout} from '../components/pageLayout';
+import {PageLayout, InnerStyle} from '../components/pageLayout';
 import styled from 'styled-components';
 const About = () => {
     return (
         <PageLayout>
-            <AboutStyle>
+            <InnerStyle>
                 <h1>About Me</h1>
                 <p>
                     Everyone has come across a beautiful website or app. One that gifts you sensations of awe and inspiration as the seamless, yet visually arresting page loads. Everything, from the buttons to the text, slots together as a design that feels as
@@ -17,8 +17,7 @@ const About = () => {
                     <br /><br />
                     I was born in Germany and currently reside in the United States. I love playing piano, breakdancing, and gaming. My passions range from inclusivity, health and fitness, and maintaining a learning mindset. I invite you to browse my website and connect with me on social media so we may learn more about each other!
                 </p>
-            </AboutStyle>
-            
+            </InnerStyle>
         </PageLayout>
     )
 }
@@ -26,17 +25,7 @@ const About = () => {
 export default About;
 
 
-const AboutStyle = styled.div`
-    padding: 5vh 20vw;
-    text-align: center;
-    
-    h1 {
-        text-transform: uppercase;
-        font-size: 3rem;
-        margin-bottom: 7vh;
-    }
 
-`;
 
 
 

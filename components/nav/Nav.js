@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import Logo from '../../public/nielspeschel.svg';
 import Link from 'next/link'
-import {MenuButton, MobileNav, NavLi} from './components'
+import {MenuButton, MobileNav, NavLi} from './components';
+import { useRouter } from 'next/router'
+
 import {useState} from 'react'
 
 export const Nav = () => {
     const [ showMobileNav, setShowMobileNav ] = useState(false);
+
+    const router = useRouter();
 
     const handleClick = () => {
         console.log('clicked')
@@ -14,13 +18,17 @@ export const Nav = () => {
         });
     }
 
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        router.push('/');
+    }
     return (
         <div>
             <MenuButton showMobileNav = {showMobileNav} handleClick = {handleClick}/>
             <NavStyle>
-                <Link href = './'>
+                <a onClick = {handleLogoClick} href = '/'>
                     <Logo />
-                </Link>
+                </a>
                 
                 <ul>
                     <NavLi><Link href="/about">About</Link></NavLi>
@@ -87,6 +95,11 @@ const NavStyle = styled.nav`
         @media only screen and (max-width: 900px) {
             display: none;
         }
+    }
+
+    button {
+        background: none;
+        border: none;
     }
 
 `;

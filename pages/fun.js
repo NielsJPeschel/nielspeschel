@@ -1,8 +1,15 @@
 import {PageLayout} from '../components/pageLayout';
+import {FunPage} from '../components/fun';
+
+import {Canvas} from '../components/Canvas';
+
 const Fun = () => {
+
+    
+
     return (
         <PageLayout>
-            Coming soon
+            <FunPage />
         </PageLayout>
     )
 }
