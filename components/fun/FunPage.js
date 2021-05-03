@@ -44,20 +44,6 @@ export const FunPage = () => {
               img.src = currentFrame(i);
             }
         }
-
-        // const img = new Image()
-        // img.src = currentFrame(1);
-        // // canvas.width=windowWidth;
-        // // canvas.height=770;
-        // img.onload=function(){
-        //     ctx.drawImage(img, 0, 0);
-        // }
-
-        
-
-      
-
-        // preloadImages();
         if (typeof window !== 'undefined') { 
             const img = new Image();
             const updateImage = index => {
@@ -80,8 +66,9 @@ export const FunPage = () => {
         <>
             <PageTitle>When I'm Not Coding...</PageTitle>
             <Content>
-                <Overlay />
-                <Canvas draw = {draw} />
+                {/* <Overlay /> */}
+                coming sooon...
+                {/* <Canvas draw = {draw} /> */}
 
             </Content>
             
