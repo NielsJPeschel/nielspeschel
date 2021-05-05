@@ -19,7 +19,6 @@ export const MobileNav = ( props ) => {
             <ul>
                     <li><Link href="/about">About</Link></li>
                     <li><Link href="/work">Work</Link></li>
-                    <li><Link href="/fun">Fun</Link></li>
             </ul>
         </Backgound>
     );

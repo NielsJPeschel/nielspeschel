@@ -33,7 +33,6 @@ export const Nav = () => {
                 <ul>
                     <NavLi><Link href="/about">About</Link></NavLi>
                     <NavLi><Link href="/work">Work</Link></NavLi>
-                    <NavLi><Link href="/fun">Fun</Link></NavLi>
                 </ul>
                
                 
