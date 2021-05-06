@@ -2,23 +2,33 @@ import styled from 'styled-components';
 import N from '../../../public/N.svg'
 import {useState, useEffect} from 'react';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 
 
 export const MobileNav = ( props ) => {
     const [height, setHeight] = useState(0);
 
+    const router = useRouter();
+
     useEffect(() => {
         setHeight(100);
-    }, [])
+    }, []);
+
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        router.push('/');
+    }
+
     const {showMobileNav} = props
     return (
         <Backgound height = {height} show = {showMobileNav} >
-            <Link href = './'>
+            <a onClick = {handleLogoClick} href = '/'>
                 <N fill = 'white' />
-            </Link>
+            </a>
             <ul>
-                    <li><Link href="/about">About</Link></li>
-                    <li><Link href="/work">Work</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/work">Work</Link></li>
             </ul>
         </Backgound>
     );
