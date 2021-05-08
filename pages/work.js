@@ -2,14 +2,22 @@ import {PageLayout, InnerStyle} from '../components/pageLayout';
 
 import { ExpCard } from '../components/expCard'
 
-import Github from '../public/social/github.svg'
+import Github from '../public/social/github.svg';
+import PDesigns from '../public/social/pdlogo.svg';
 
 const work = [{
     href: 'https://github.uconn.edu/njp15106/DataModelingGeneExpressions',
     icon: <Github fill = 'white' />,
     title: 'Data Modeling Gene Expressions',
-    techs: [ 'python', 'php', 'nltk', 'flask'],
+    techs: [ 'python', 'php', 'nltk', 'flask', 'MySQL'],
     descr: 'This project explores the application of natural language processing in gene expression research.'
+},
+{
+    href: 'https://pescheldesigns.com',
+    icon: <PDesigns fill = 'white' />,
+    title: 'Peschel Designs',
+    techs: [ 'Photoshop', 'Illustrator', 'Wordpress'],
+    descr: 'Peschel Designs is my graphic design portfolio, specializing in crafting logos and brands.'
 }]
 
 

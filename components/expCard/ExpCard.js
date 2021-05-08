@@ -21,20 +21,23 @@ export const ExpCard = ( props ) => {
 }
 
 const CardAnchor = styled.a`
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     text-align: left;
     border: 1px solid rgb(220, 220, 220);
     border-radius: 15px;
     cursor: pointer;
+    margin-bottom: 20px;
     :hover {
         border-color: black;
     }
     
+    @media only screen and (max-width: 900px) { 
+        flex-direction: column;
+    }
 `;
 
 const CardContent = styled.div`
-    /* display: inline; */
-    flex: 0.8;
     padding: 10px 5px;
     margin-left: 30px;
     h1 {
@@ -47,9 +50,11 @@ const CardContent = styled.div`
     ul {
         list-style: none;
         margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
 
         li {
-            display: inline;
+            /* display: inline; */
             font-size: 0.6rem;
             padding: 2px 12px;
             border-radius: 3px;
@@ -57,9 +62,14 @@ const CardContent = styled.div`
             margin: 0 5px 5px 0;
             color: white;
             background: black;
+            text-transform: lowercase;
         }
     }
     p {
         font-size: 0.9rem;
+    }
+
+    @media only screen and (max-width: 900px) { 
+        margin: 5px;
     }
 `;
